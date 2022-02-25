@@ -11,7 +11,7 @@
   <tr>
     <th>follows</th>
     <th class="text-primary">
-      <%= link_to followings_user_path(user) do %>
+      <%= link_to user_followings_path(user) do %>
         <%= user.followings.count %>
       <% end %>
     </th>
@@ -19,7 +19,7 @@
   <tr>
     <th>followers</th>
     <th class="text-primary">
-      <%= link_to followers_user_path(user) do %>
+      <%= link_to user_followers_path(user) do %>
         <%= user.followers.count %>
       <% end %>
     </th>
@@ -33,6 +33,6 @@
       <i class="fas fa-user-cog"></i>
     <% end %>
   <% else %>
-    <%= render 'relationships/follow_button', user: user %>
+    <%= render 'relationships/btn', user: user %>
   <% end %>
 </div>

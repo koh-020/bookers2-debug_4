@@ -11,20 +11,10 @@
       <tr>
         <td><%= image_tag user.get_profile_image, size: '50x50' %></td>
         <td><%= user.name %></td>
+        <td><p>フォロー数：<%= user.followings.count %></p></td>
+        <td><p>フォロワー数：<%= user.followers.count %></p></td>
         <td>
-          <p>
-            フォロー数：<%= user.followings.count %>
-          </p>
-        </td>
-        <td>
-          <p>
-            フォロワー数：<%= user.followers.count %>
-          </p>
-        <td>
-
-        </td>
-        <td>
-          <%= render 'relationships/follow_button', user: user %>
+          <%= render 'relationships/btn', user: user %>
         </td>
         <td><%= link_to 'Show', user, class: "user_#{user.id}" %></td>
       </tr>

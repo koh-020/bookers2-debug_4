@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:update, :edit]
 
   def show
@@ -23,17 +24,6 @@ class UsersController < ApplicationController
       render "edit"
     end
   end
-
-  def followings
-    @user = User.find(params[:id])
-    @followings = @user.followings
-  end
-
-  def followers
-    @user = User.find(params[:id])
-    @followers = @user.followers
-  end
-
 
   private
 
